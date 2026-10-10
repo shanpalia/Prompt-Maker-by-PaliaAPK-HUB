@@ -3,6 +3,7 @@ const config: CapacitorConfig = {
   appId: "com.paliaapkhub.promptmaker",
   appName: "Prompt Maker",
   webDir: "out",
+  plugins: { StatusBar: { overlaysWebView: false, backgroundColor: "#fbfdfc", style: "LIGHT" } },
   server: { androidScheme: "https" }
 };
 export default config;
