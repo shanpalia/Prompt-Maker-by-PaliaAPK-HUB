@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "app/**"
+      - "assets/**"
       - "package.json"
       - "package-lock.json"
       - "next.config.ts"
