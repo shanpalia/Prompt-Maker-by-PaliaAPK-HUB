@@ -44,7 +44,7 @@ jobs:
           sudo apt-get install -y librsvg2-bin
           mkdir -p assets
           rsvg-convert -w 1024 -h 1024 assets/icon.svg > assets/icon.png
-          rsvg-convert -w 2732 -h 2732 assets/splash.svg > assets/splash.png
+          rsvg-convert -w 1366 -h 2732 assets/splash.svg > assets/splash.png
       - name: Generate native icon and splash assets
         run: npx capacitor-assets generate --android
       - name: Verify native splash assets exist
