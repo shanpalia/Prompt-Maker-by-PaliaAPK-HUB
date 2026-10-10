@@ -47,6 +47,9 @@ jobs:
           rsvg-convert -w 2732 -h 2732 assets/splash.svg > assets/splash.png
       - name: Generate native icon and splash assets
         run: npx capacitor-assets generate --android
+      - name: Verify generated native splash assets
+        run: |
+          find android/app/src/main/res -maxdepth 2 -type f | grep -E 'splash|launch' || true
       - name: Sync Capacitor
         run: npx cap sync android
       - name: Build debug APK
