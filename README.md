@@ -10,7 +10,11 @@ The homepage queries `public.prompts` from Supabase and only displays rows with 
 2. In SQL Editor, run `supabase/schema.sql`.
 3. Then run `supabase/admin-select-policy.sql`.
 4. In Supabase Authentication, create an account for the owner/admin.
-5. Give that user the trusted app metadata claim `{"role":"prompt_admin"}` using a secure Supabase admin process. Do not put a service-role key in this app or in GitHub Actions.
+5. In Supabase SQL Editor, set the trusted app metadata role for the account you created (replace the email):
+   ```sql
+   update auth.users set raw_app_meta_data = coalesce(raw_app_meta_data, '{}'::jsonb) || '{"role":"prompt_admin"}'::jsonb where email = 'YOUR_ADMIN_EMAIL';
+   ```
+   Sign out and sign in again after changing the role so the session JWT refreshes. Never put a service-role key in the app or GitHub Actions.
 6. In GitHub repo Settings → Secrets and variables → Actions → New repository secret, add:
    - `NEXT_PUBLIC_SUPABASE_URL` = Supabase Project URL
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = Supabase publishable/anon key (never the service-role key)
