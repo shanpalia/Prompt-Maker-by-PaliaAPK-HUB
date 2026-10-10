@@ -3,15 +3,21 @@ const config: CapacitorConfig = {
   appId: "com.paliaapkhub.promptmaker",
   appName: "Prompt Maker",
   webDir: "out",
+  backgroundColor: "#fbfdfc",
   plugins: {
     SplashScreen: {
-      launchShowDuration: 2200,
+      launchShowDuration: 3000,
       launchAutoHide: true,
       backgroundColor: "#fbfdfc",
-      androidScaleType: "CENTER_CROP",
-      showSpinner: false
+      androidScaleType: "FIT_CENTER",
+      showSpinner: false,
+      splashImmersive: false
     },
-    StatusBar: { overlaysWebView: false, backgroundColor: "#fbfdfc", style: "LIGHT" }
+    StatusBar: {
+      overlaysWebView: false,
+      backgroundColor: "#fbfdfc",
+      style: "LIGHT"
+    }
   },
   server: { androidScheme: "https" }
 };
