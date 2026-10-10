@@ -37,3 +37,8 @@ body{overflow-x:hidden}
 .bottomNav a{background:transparent!important}
 .bottomNav a.active span{background:#ddf9ed!important}
 @media(max-width:600px){.appShell{padding-bottom:calc(205px + env(safe-area-inset-bottom,0px))!important}.bottomNav{padding-top:7px!important;padding-bottom:calc(7px + env(safe-area-inset-bottom,0px))!important}.bottomNav a.createTab span{margin-top:-22px}}
+
+/* Final fix: bottom tabs sit flush to the screen bottom, not floating above content */
+.bottomNav{position:fixed!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;width:100%!important;z-index:10000!important;margin:0!important;transform:none!important;padding:7px 5px calc(7px + env(safe-area-inset-bottom,0px))!important}
+.appShell{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))!important}
+@media(max-width:600px){.appShell{padding-bottom:calc(125px + env(safe-area-inset-bottom,0px))!important}.bottomNav a.createTab span{margin-top:-20px}}
