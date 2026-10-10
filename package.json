@@ -16,7 +16,9 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "@capacitor/core": "^7.4.3",
-    "@capacitor/android": "^7.4.3"
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/splash-screen": "^7.0.2",
+    "@capacitor/status-bar": "^7.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -25,6 +27,7 @@
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.5.0",
     "typescript": "^5.0.0",
-    "@capacitor/cli": "^7.4.3"
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/assets": "^3.0.5"
   }
 }
