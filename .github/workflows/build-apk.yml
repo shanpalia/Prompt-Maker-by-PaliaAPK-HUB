@@ -47,11 +47,16 @@ jobs:
           rsvg-convert -w 2732 -h 2732 assets/splash.svg > assets/splash.png
       - name: Generate native icon and splash assets
         run: npx capacitor-assets generate --android
-      - name: Verify generated native splash assets
+      - name: Verify native splash assets exist
         run: |
-          find android/app/src/main/res -maxdepth 2 -type f | grep -E 'splash|launch' || true
-      - name: Sync Capacitor
+          find android/app/src/main/res -type f | sort
+          find android/app/src/main/res -type f | grep -E 'splash|launch' 
+      - name: Sync Capacitor plugins
         run: npx cap sync android
+      - name: Verify splash plugin is installed
+        run: |
+          grep -R "capacitor-splash-screen" -n android/capacitor.settings.gradle android/app/capacitor.build.gradle || true
+          find android/app/src/main/res -type f | grep -E 'splash|launch'
       - name: Build debug APK
         working-directory: android
         run: chmod +x gradlew && ./gradlew assembleDebug
