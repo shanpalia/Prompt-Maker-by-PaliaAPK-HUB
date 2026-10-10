@@ -42,3 +42,16 @@ body{overflow-x:hidden}
 .bottomNav{position:fixed!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;width:100%!important;z-index:10000!important;margin:0!important;transform:none!important;padding:7px 5px calc(7px + env(safe-area-inset-bottom,0px))!important}
 .appShell{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))!important}
 @media(max-width:600px){.appShell{padding-bottom:calc(125px + env(safe-area-inset-bottom,0px))!important}.bottomNav a.createTab span{margin-top:-20px}}
+
+/* In-app branded launch screen shown once the web runtime starts */
+.brandSplash{position:fixed;inset:0;z-index:20000;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 28px) 22px calc(env(safe-area-inset-bottom,0px) + 24px);background:linear-gradient(160deg,#fff 0%,#f7fffb 58%,#dcfff0 100%);animation:splashAppear .25s ease-out}
+.splashTopWave{position:absolute;left:-15%;right:-15%;top:-100px;height:250px;border-radius:0 0 50% 50%;background:linear-gradient(130deg,#e2fff3,#a8f5d7);transform:rotate(-4deg)}
+.splashLogo{position:relative;display:grid;place-items:center;width:158px;height:158px;border-radius:42px;background:linear-gradient(145deg,#fff,#e0fff2);border:4px solid #13d89a;box-shadow:0 12px 30px #079b6420;color:#079d64;font-size:124px;font-weight:900;line-height:1;text-shadow:0 3px 0 #b2ead5}
+.splashLogo i{position:absolute;right:-13px;bottom:3px;font-size:43px;font-style:normal;color:#00a86b;text-shadow:0 2px 0 white}
+.brandSplash>h1{font:800 clamp(35px,9vw,54px)/1.1 Manrope,sans-serif;letter-spacing:-1.5px;margin:30px 0 8px;color:#12231f}.brandSplash>h1 em{font-style:normal;color:#08a66b}
+.splashBy{font-size:22px;color:#667770}.splashBy strong{color:#087d53}.splashTag{margin-top:22px;font-size:11px;letter-spacing:2px;color:#657870}
+.splashProgress{margin-top:42px;width:min(280px,75vw);height:9px;border-radius:9px;background:#dce8e3;overflow:hidden}.splashProgress span{display:block;height:100%;width:65%;border-radius:9px;background:linear-gradient(90deg,#19d697,#07885a);animation:splashProgress 2.4s ease-in-out forwards}
+.splashLoading{margin-top:12px;font-size:14px;color:#657870}.splashDeveloper{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:50px;color:#52665d}.splashDeveloper span{font-size:30px;color:#079b64}.splashDeveloper small{font-size:14px}.splashDeveloper strong{font-size:23px;color:#12231f}
+.splashBottomWave{position:absolute;left:-12%;right:-12%;bottom:-110px;height:210px;border-radius:50% 50% 0 0;background:linear-gradient(110deg,#c4f9e2,#08c985,#08794f);opacity:.9}
+@keyframes splashProgress{from{width:4%}to{width:100%}}@keyframes splashAppear{from{opacity:0}to{opacity:1}}
+@media(max-height:650px){.splashLogo{width:110px;height:110px;font-size:86px;border-radius:30px}.brandSplash>h1{margin-top:18px;font-size:34px}.splashProgress{margin-top:22px}.splashDeveloper{margin-top:24px}.splashBottomWave{height:130px;bottom:-95px}}
