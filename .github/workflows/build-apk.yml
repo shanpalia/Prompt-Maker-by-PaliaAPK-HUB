@@ -31,10 +31,19 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
+      - name: Prepare branded Android assets
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+          mkdir -p assets
+          rsvg-convert -w 1024 -h 1024 assets/icon.svg > assets/icon.png
+          rsvg-convert -w 1200 -h 2400 assets/splash.svg > assets/splash.png
       - name: Install web dependencies
         run: npm install
       - name: Export web app
         run: npm run build
+      - name: Generate native icon and splash assets
+        run: npx capacitor-assets generate --android
       - name: Add Android platform
         run: npx cap add android
       - name: Sync Capacitor
