@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useRef,useState} from "react";
 import {getSupabase} from "../lib/supabase-browser";
-type Prompt={id:string;title:string;category:string;prompt_text:string;image_url:string|null;status:string;created_at:string};
+type Prompt={id:string;title:string;category:string;prompt_text:string;image_url:string|null;status:string;created_at:string;published_at?:string|null};
 export default function Home(){
  const [showSplash,setShowSplash]=useState(true);useEffect(()=>{const timer=window.setTimeout(()=>setShowSplash(false),2600);return()=>window.clearTimeout(timer)},[]);
  const [taps,setTaps]=useState(0);const timer=useRef<ReturnType<typeof setTimeout>|null>(null);
