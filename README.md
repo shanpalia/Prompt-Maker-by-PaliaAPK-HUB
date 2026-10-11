@@ -29,3 +29,28 @@ The homepage queries `public.prompts` from Supabase and only displays rows with 
 
 ## Security
 The five-tap shortcut is only a hidden route, not security. Authentication and database Row Level Security enforce permissions. Never embed a Supabase service-role key or OpenAI secret key in the Android app. AI generation can be added via a server-side service; this static APK should not contain private API keys.
+
+
+## PC / laptop website (build this first)
+This project is a responsive website; on screens wider than 900px it uses a desktop layout with a wide hero, horizontal category navigation, a 4–5 column prompt grid and a centered bottom navigation panel. The phone layout remains responsive.
+
+### Run on your Windows PC
+1. Install Node.js LTS from https://nodejs.org/.
+2. Download this repository using GitHub's **Code → Download ZIP**, then extract it.
+3. Open the extracted folder in VS Code, or open Command Prompt in that folder.
+4. Run:
+   ```bash
+   npm install
+   ```
+5. Create a file named `.env.local` in the project root and add your Supabase project URL and publishable/anon key:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY
+   ```
+6. Run:
+   ```bash
+   npm run dev
+   ```
+7. On the same PC, open http://localhost:3000. The admin page is at http://localhost:3000/admin/.
+
+For a public website, deploy this Next.js project to a Next.js-compatible host such as Vercel and add the same two public Supabase environment variables in the host's project settings. The database schema and admin role setup above must be completed first. Never expose a Supabase service-role key or private AI API key in the browser.
