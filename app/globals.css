@@ -60,3 +60,59 @@ body{overflow-x:hidden}
 .promptCount{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:34px;padding:0 12px;border-radius:22px;background:#edf7f2;color:#4f6b5e;font-size:13px}
 .emptyPrompts{min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;padding:28px 18px;border:1px dashed #c8ddd3;border-radius:22px;background:linear-gradient(145deg,#fbfffd,#f5fcf8);color:#52665d}.emptyPrompts>span{display:grid;place-items:center;width:60px;height:60px;border-radius:20px;background:#dff8ed;color:#0b9663;font-size:30px}.emptyPrompts b{color:#1c3028;font-size:17px}.emptyPrompts p{max-width:400px;margin:0;font-size:13px;line-height:1.6}
 .livePrompt{overflow:hidden;border:1px solid #e8efeb;border-radius:16px;background:white;box-shadow:0 3px 10px #123a2508}.livePromptArt{aspect-ratio:1/1;position:relative;background:#eff8f3;border-radius:0;box-shadow:none}.livePromptArt>img{width:100%;height:100%;object-fit:cover;display:block}.noPromptImage{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(145deg,#dff8ed,#f7fffb,#c5f2de);color:#0a9a64;font-size:40px}.noPromptImage small{font-size:12px;font-weight:700;color:#356a54}.livePromptInfo{padding:12px;display:grid;gap:6px}.livePromptInfo>b{font-size:14px;color:#182e25}.livePromptInfo>small{color:#0a9562;font-size:11px}.livePromptInfo details{font-size:12px;color:#4c5f55}.livePromptInfo summary{cursor:pointer;font-weight:700;padding:6px 0}.livePromptInfo details p{white-space:pre-wrap;line-height:1.5;overflow-wrap:anywhere}.livePromptInfo details button{border:0;border-radius:10px;background:#0a9c67;color:#fff;padding:9px 12px;font-weight:700}.copyNotice{position:fixed;left:12px;right:12px;bottom:calc(115px + env(safe-area-inset-bottom,0px));z-index:10001;padding:12px 15px;border-radius:14px;background:#123d2d;color:white;box-shadow:0 6px 22px #0002;font-size:13px}
+
+/* Desktop-first website layout */
+@media(min-width:900px){
+ html,body{background:#f7fbf9}
+ .appShell{max-width:1440px;padding:0 42px 52px}
+ .appHeader{padding:22px 0 24px;gap:22px}
+ .menuBtn{font-size:24px;width:48px;height:48px;border-radius:14px;background:#f0f8f4}
+ .brandLockup{flex:0 0 auto;justify-content:flex-start;gap:12px}
+ .brandMark{width:64px;height:64px;font-size:53px;border-radius:20px}
+ .brandWords b{font-size:28px;letter-spacing:-1.2px}
+ .brandWords small{font-size:12px}.brandWords i{font-size:9px;letter-spacing:1.3px}
+ .headerIcon{margin-left:auto;width:48px;height:48px;border-radius:14px;background:#f0f8f4;font-size:30px}
+ .profileIcon{width:48px;height:48px;min-width:48px}
+ .promoHero{margin:28px 0 24px;min-height:320px;padding:42px 52px;border-radius:30px;gap:42px;background:linear-gradient(110deg,#dffbef 0%,#eafbf4 58%,#f9fffc 100%);box-shadow:0 18px 50px #0e7b4d0b}
+ .promoCopy{flex:1;max-width:650px}.miniSpark{font-size:13px;letter-spacing:1.8px}
+ .promoCopy h1{font-size:clamp(42px,4vw,64px);line-height:1.08;letter-spacing:-2px;margin:22px 0 18px}
+ .promoCopy p{font-size:18px;line-height:1.7;max-width:540px}
+ .exploreBtn{padding:15px 24px;font-size:16px;border-radius:15px}
+ .heroArt{flex:0 0 360px;width:360px;height:240px}
+ .artPortrait{width:200px;height:210px;border-radius:50% 50% 44% 44%;font-size:110px}
+ .artPrompt{width:200px;padding:20px;right:0;top:44px;border-radius:22px;font-size:16px}
+ .artPrompt span{height:11px;margin-top:12px}.artPrompt strong{padding:13px;margin-top:15px;font-size:15px}
+ .categoryRow{display:flex;justify-content:flex-start;gap:12px;margin:22px 0}
+ .categoryRow button{flex:0 0 130px;min-height:96px;border-radius:18px;font-size:26px;box-shadow:0 3px 10px #183a2b05}
+ .categoryRow button small{font-size:13px}
+ .searchLine{max-width:none;gap:12px;margin:24px 0 15px}
+ .homeSearch{height:58px;border-radius:16px;padding:0 20px;box-shadow:0 4px 18px #183a2b08}
+ .homeSearch input{font-size:16px}.filterBtn{width:58px;height:58px;border-radius:16px}
+ .trendRow{justify-content:flex-start;gap:10px;margin:16px 0 26px}
+ .trendRow button{padding:11px 18px;font-size:14px}
+ .promptSection{margin-top:28px}.sectionTitle{margin-bottom:18px}
+ .sectionTitle h2{font-size:28px;letter-spacing:-.6px}
+ .promptGrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+ .livePrompt{border-radius:20px;transition:transform .18s ease,box-shadow .18s ease}
+ .livePrompt:hover{transform:translateY(-4px);box-shadow:0 16px 36px #183a2b14}
+ .livePromptArt{aspect-ratio:4/3}.livePromptInfo{padding:16px;gap:9px}
+ .livePromptInfo>b{font-size:16px}.livePromptInfo>small{font-size:12px}
+ .bottomNav{position:static!important;z-index:auto;max-width:760px;margin:34px auto 0;border:1px solid #e5eee9;border-radius:22px;box-shadow:0 6px 24px #153e2808;padding:10px 18px;background:#fff}
+ .bottomNav a{flex-direction:row;gap:9px;min-height:52px;font-size:23px;border-radius:14px}
+ .bottomNav a small{font-size:13px}
+ .bottomNav a.createTab span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#079e69;color:white;font-size:28px;margin-top:0}
+ .appFooter{padding:26px 0 8px;text-align:center;font-size:12px;color:#71827b}
+ .copyNotice{left:auto;right:28px;bottom:26px;max-width:440px}
+}
+@media(min-width:1200px){
+ .appShell{padding-left:56px;padding-right:56px}
+ .promoHero{min-height:350px;padding-left:64px;padding-right:64px}
+ .heroArt{flex-basis:430px;width:430px;height:260px}
+ .artPortrait{width:220px;height:230px}.artPrompt{width:220px}
+ .promptGrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:22px}
+}
+@media(min-width:900px) and (max-width:1050px){
+ .appShell{padding-left:24px;padding-right:24px}
+ .categoryRow{gap:8px}.categoryRow button{flex-basis:calc((100% - 40px)/6)}
+ .heroArt{flex-basis:280px;width:280px}.artPrompt{width:170px}
+}
